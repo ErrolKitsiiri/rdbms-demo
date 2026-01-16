@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @PutMapping("/email/{id}")
-    public String updateEmail(@PathVariable int id, @RequestParam String email){
+    public String updateEmail(@PathVariable int id, @RequestBody String email){
         userService.updateEmail(id, email);
         return "User email updated successfully";
     }
@@ -39,6 +39,6 @@ public class UserController {
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable int id){
         userService.deleteUser(id);
-        return "User Deleted SSuccessfully";
+        return "User Deleted Successfully";
     }
 }
